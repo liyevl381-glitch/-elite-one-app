@@ -1,0 +1,167 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f8f5ee">
+<title>ELITE ONE | Private Members Club</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f8f5ee;color:#29251f;font-family:Georgia,serif}
+header{padding:25px 22px;border-bottom:1px solid #dfd4bd;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:24px;letter-spacing:4px;color:#98733c}
+.logo small{display:block;font-size:9px;letter-spacing:3px;text-align:center;margin-top:5px}
+.menu{font:12px Arial;color:#98733c}
+main{padding:25px 20px 100px;max-width:600px;margin:auto}
+.welcome{font-size:13px;color:#967b52;letter-spacing:2px}
+h1{font-size:35px;font-weight:normal;line-height:1.2;margin:12px 0}
+p{font:14px/1.7 Arial;color:#777}
+.hero{background:linear-gradient(145deg,#eee3ce,#d7c19b);padding:28px 22px;border-radius:5px;margin:25px 0}
+.hero h2{font-size:26px;font-weight:normal}
+.gold{color:#88632e}
+.btn{border:0;background:#98733c;color:white;padding:15px 20px;border-radius:3px;width:100%;font-size:12px;letter-spacing:2px;cursor:pointer}
+.section-title{font-size:21px;font-weight:normal;margin:32px 0 15px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:#fffdf9;border:1px solid #e6dece;padding:18px 14px;border-radius:5px}
+.card .symbol{font-size:25px;color:#a17b40}
+.card h3{font-size:16px;font-weight:normal}
+.card p{font-size:12px}
+.price{font-size:25px;color:#94703b}
+input,textarea,select{width:100%;padding:14px;margin:8px 0 15px;border:1px solid #ded5c6;background:#fffdf9;border-radius:3px;font:14px Arial}
+label{font:12px Arial;color:#74664f}
+.page{display:none}
+.page.active{display:block}
+nav{position:fixed;bottom:0;left:0;right:0;background:#fffdf9;border-top:1px solid #e6dece;display:flex;justify-content:space-around;padding:12px 3px;z-index:5}
+nav button{background:none;border:0;color:#8d795a;font-size:10px;cursor:pointer}
+nav span{display:block;font-size:19px;margin-bottom:4px}
+nav button.selected{color:#b18a4d}
+.member{background:#28251f;color:#d9c399;padding:24px;border-radius:7px;margin-top:20px}
+.member h2{letter-spacing:4px;font-size:22px}
+footer{text-align:center;color:#a18b69;font-size:10px;letter-spacing:3px;margin-top:35px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">♛ ELITE ONE<small>PRIVATE MEMBERS CLUB</small></div>
+<div class="menu">DUBAI · GLOBAL</div>
+</header>
+<main>
+<section id="home" class="page active">
+<div class="welcome">WELCOME TO ELITE ONE</div>
+<h1>Your World.<br><span class="gold">One Privilege.</span></h1>
+<p>A private world of exceptional experiences, personal service and exclusive connections.</p>
+<div class="hero">
+<div class="welcome">YOUR PRIVATE WORLD</div>
+<h2>Experience the extraordinary.</h2>
+<p>Discover a new standard of private membership.</p>
+<button class="btn" onclick="show('membership')">DISCOVER MEMBERSHIP</button>
+</div>
+<h2 class="section-title">Your Privileges</h2>
+<div class="grid">
+<div class="card"><div class="symbol">♕</div><h3>Concierge</h3><p>Personal assistance and reservations.</p></div>
+<div class="card"><div class="symbol">◇</div><h3>Elite Network</h3><p>Exclusive member connections.</p></div>
+<div class="card"><div class="symbol">✧</div><h3>Experiences</h3><p>Exceptional events and invitations.</p></div>
+<div class="card"><div class="symbol">✈</div><h3>Luxury Travel</h3><p>Premium travel arrangements.</p></div>
+</div>
+</section>
+
+<section id="concierge" class="page">
+<div class="welcome">PERSONAL ASSISTANCE</div>
+<h1>Private <span class="gold">Concierge.</span></h1>
+<p>Tell us what you need. Our team will review your request.</p>
+<form id="requestForm">
+<label>Your name</label>
+<input id="name" required placeholder="Full name">
+<label>Email address</label>
+<input id="email" type="email" required placeholder="Email">
+<label>Service</label>
+<select id="service">
+<option>Hotel reservation</option>
+<option>Private driver</option>
+<option>Restaurant reservation</option>
+<option>Luxury travel</option>
+<option>Exclusive event</option>
+<option>Other request</option>
+</select>
+<label>Your request</label>
+<textarea id="details" required rows="4" placeholder="Describe your request..."></textarea>
+<button class="btn">SUBMIT REQUEST</button>
+</form>
+</section>
+
+<section id="membership" class="page">
+<div class="welcome">EXCLUSIVE MEMBERSHIP</div>
+<h1>Choose your <span class="gold">privilege.</span></h1>
+<div class="card">
+<h3>ESSENTIAL</h3><div class="price">$49 <small>/ month</small></div>
+<p>Private club access and exclusive offers.</p>
+<button class="btn" onclick="apply('Essential')">APPLY NOW</button>
+</div><br>
+<div class="card">
+<h3>PREMIUM</h3><div class="price">$149 <small>/ month</small></div>
+<p>Essential benefits and personal concierge requests.</p>
+<button class="btn" onclick="apply('Premium')">APPLY NOW</button>
+</div><br>
+<div class="card">
+<h3>BLACK</h3><div class="price">$499 <small>/ month</small></div>
+<p>Priority assistance and personalized service.</p>
+<button class="btn" onclick="apply('Black')">APPLY NOW</button>
+</div>
+<p>Applications are subject to review. Membership is not activated until confirmed.</p>
+</section>
+
+<section id="network" class="page">
+<div class="welcome">PRIVATE COMMUNITY</div>
+<h1>Elite <span class="gold">Network.</span></h1>
+<p>A private network for verified members. Community access will open after membership approval.</p>
+<div class="card"><div class="symbol">♙</div><h3>Verified connections</h3><p>Meet entrepreneurs, investors and international professionals.</p></div>
+</section>
+
+<section id="profile" class="page">
+<div class="welcome">YOUR PRIVATE ACCOUNT</div>
+<h1>My <span class="gold">Profile.</span></h1>
+<div class="member"><div>ELITE ONE</div><h2>PRIVATE MEMBER</h2><p>MEMBERSHIP APPLICATION</p><div>Dubai · Global</div></div>
+<p id="profileStatus">You have not submitted an application yet.</p>
+</section>
+
+<footer>ELITE ONE · DUBAI · GLOBAL</footer>
+</main>
+<nav>
+<button class="selected" onclick="show('home',this)"><span>⌂</span>HOME</button>
+<button onclick="show('concierge',this)"><span>♧</span>CONCIERGE</button>
+<button onclick="show('membership',this)"><span>♕</span>MEMBERSHIP</button>
+<button onclick="show('network',this)"><span>◇</span>NETWORK</button>
+<button onclick="show('profile',this)"><span>♙</span>PROFILE</button>
+</nav>
+<script>
+function show(id,btn){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('selected'));
+if(btn)btn.classList.add('selected');
+else document.querySelectorAll('nav button')[id==='home'?0:id==='concierge'?1:id==='membership'?2:id==='network'?3:4].classList.add('selected');
+window.scrollTo(0,0);
+}
+function apply(plan){
+localStorage.setItem('elite_plan',plan);
+document.getElementById('profileStatus').textContent='Application selected: '+plan+'. Please contact the club to complete your application.';
+show('profile');
+}
+document.getElementById('requestForm').addEventListener('submit',function(e){
+e.preventDefault();
+let requests=JSON.parse(localStorage.getItem('elite_requests')||'[]');
+requests.push({
+name:document.getElementById('name').value,
+email:document.getElementById('email').value,
+service:document.getElementById('service').value,
+details:document.getElementById('details').value
+});
+localStorage.setItem('elite_requests',JSON.stringify(requests));
+alert('Your demo request has been saved on this device.');
+this.reset();
+});
+</script>
+</body>
+</html>
