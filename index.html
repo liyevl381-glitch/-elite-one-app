@@ -159,9 +159,14 @@ service:document.getElementById('service').value,
 details:document.getElementById('details').value
 });
 localStorage.setItem('elite_requests',JSON.stringify(requests));
-alert('Your demo request has been saved on this device.');
-this.reset();
+document.getElementById('elite-message').style.display='block';
+setTimeout(()=>{
+document.getElementById('elite-message').style.display='none';
+},4000);
 });
 </script>
-</body>
+  <div id="elite-message" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;background:#171717;color:#d4af37;padding:18px;border:1px solid #d4af37;border-radius:12px;z-index:9999;text-align:center;">
+  Müraciətiniz qəbul edildi. ELITE ONE sizinlə əlaqə saxlayacaq.
+  </div>
+</body> 
 </html>
